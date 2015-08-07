@@ -32,7 +32,7 @@
     "object-assign": "^3.0.0",
     "react": "~0.13.3",
     "redux": "^1.0.0-rc",
-    "react-redux": "0.2.x",
+    "react-redux": "0.5.x",
     "redux-thunk": "0.1.x",
     "react-router": "1.0.0-beta1",
     "radium": "~0.13.2",
