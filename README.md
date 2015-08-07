@@ -26,6 +26,9 @@ No server side part is included.
 
 
 # Usage
+Clone on fork this repository and then use the available __tasks__ and
+__configurations__ to customize accordingly.
+
 ## Available tasks
 #### `npm run dev`
 Runs the webpack build system just like in `compile` but enables HMR and react
@@ -121,7 +124,6 @@ As an example, `npm run compile` would look like this:
 `npm run compile -- --debug`
 
 # TODO
-----
 * [ ] Nodemon or something for server
 
 
