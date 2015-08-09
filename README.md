@@ -1,33 +1,9 @@
-# React Redux Starter Kit 
-Starter kit to bootstrap web application projects. It is based on
-Facebook's [React](https://facebook.github.io/react/) library and
-[Redux](http://gaearon.github.io/redux/index.html) framework
-for [Flux](http://facebook.github.io/flux/) architecture. 
-No server side part is included.
-
-## Batteries included
-* Setup for writing with es6/es7 style javascript.
-* [ESLint](http://eslint.org) configuration integrated with react
-  [plugin](https://github.com/yannickcr/eslint-plugin-react).
-* [Webpack](http://webpack.github.io) module builder with hot loader and dev server.
-  * server and client bundles
-  * client bundle splits app code from vendor dependencies
-  * webpack-dev-server
-  * react-hot-loader
-  * babel w/ babel-runtime
-  * eslint-loader
-  * pre-configured aliases and globals
-* [React-hot-loader](http://gaearon.github.io/react-hot-loader/) for automated build on edit.
-* React [router](https://github.com/rackt/react-router) for client side routing.
-* [Karma](http://karma-runner.github.io) and [Jasmine](http://jasmine.github.io) for unit testing.
-  * PhantomJS browser.
-* [Redux](http://gaearon.github.io/redux/index.html) flux framework.
-  * redux devtools (enabled with `--debug` flag)
-
+# Ensembl redux
+A web application to showcase react, redux and use of ensembl api
 
 # Usage
-Clone on fork this repository and then use the available __tasks__ and
-__configurations__ to customize accordingly.
+
+## Install
 
 ## Available tasks
 #### `npm run dev`
