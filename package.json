@@ -1,7 +1,7 @@
 {
   "name": "dicty-redux",
   "version": "0.0.1",
-  "description": "starter kit for redux based react application",,
+  "description": "showcase of redux using ensembl api",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist",
@@ -15,7 +15,7 @@
     "deploy": "npm run test && npm run compile",
     "server:start": "node --harmony ./server/scripts/start"
   },
-  "author": "David Zukowski <david@zuko.me> (http://zuko.me)",
+  "author": "Siddhartha Basu <biosidd@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "babel-core": "5.x",
