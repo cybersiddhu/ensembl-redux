@@ -37,7 +37,8 @@
     "react-router": "1.0.0-beta1",
     "radium": "~0.13.2",
     "webpack": "~1.9.7",
-    "yargs": "^3.16.1"
+    "yargs": "^3.16.1",
+    "axios": "~0.5.4"
   },
   "devDependencies": {
     "jasmine-core": "~2.3.4",
