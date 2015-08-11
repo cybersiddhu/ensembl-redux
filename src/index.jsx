@@ -1,6 +1,6 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import App from './containers/App';
+import {App} from './containers/App';
 import * as store from './stores';
 import { DevTools, LogMonitor, DebugPanel } from 'redux-devtools/lib/react';
 

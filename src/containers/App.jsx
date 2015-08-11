@@ -19,7 +19,7 @@ function mapStateToProps(state) {
 // Which action creators does it want to receive by props
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(actionCreators, dispatch);
+        actions: bindActionCreators(actionCreators, dispatch)
     }
 }
 

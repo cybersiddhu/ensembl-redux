@@ -1,14 +1,14 @@
 import { applyMiddleware, compose, createStore, combineReducers } from 'redux';
 import { devTools } from 'redux-devtools';
-import thunk from 'redux-thunk';
 import * as reducers from 'reducers';
+import {ensemblMiddleware} from '../middleware';
 
 var buildStore;
 
 if (__DEBUG__) {
-  buildStore = compose(applyMiddleware(thunk), devTools(), createStore);
+  buildStore = compose(applyMiddleware(ensemblMiddleware), devTools(), createStore);
 } else {
-  buildStore = compose(applyMiddleware(thunk), createStore);
+  buildStore = compose(applyMiddleware(ensemblMiddleware), createStore);
 }
 
 export default buildStore(combineReducers(reducers));
