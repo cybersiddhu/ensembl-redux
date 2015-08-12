@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 import {Router, Route} from 'react-router';
 import App from './App';
-import Feature from './Feature';
+import Feature from 'components/Feature';
 import * as store from 'stores';
 import {DevTools, LogMonitor, DebugPanel} from 'redux-devtools/lib/react';
 
