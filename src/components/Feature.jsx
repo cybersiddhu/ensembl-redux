@@ -1,10 +1,17 @@
 import React, {Component} from 'react';
 
-
 export default class Feature extends Component {
     displayName = 'display ensembl feature'
     static contextTypes = {
         router: React.PropTypes.func.isRequired
+    }
+    componentDidMount() {
+        const {loading} = this.props;
+        const {actions} = this.props.actions;
+        const {id} = this.props.params;
+        if (loading) {
+            actions.getOverlap(id);
+        }
     }
     render() {
         const {loading, response, error} = this.props;
@@ -20,19 +27,14 @@ export default class Feature extends Component {
                 <div>
                     <h2> Error !!!!! </h2>
                     <h3> {error.data.error}</h3>
+                </div>
             );
         } else {
             display = (
                 <ul>
-                    {
-                        response.map((result) => {
-                            <li>
-                                source: {result.source}
-                                id: {result.id}
-                                biotype: {result.biotype}
-                            </li>
-                        })
-                    }
+                    {response.map((result) => {
+                        return <li> id: {result.id} biotype: {result.biotype}</li>;
+                    })}
                 </ul>
             );
         }
