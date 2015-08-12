@@ -17,5 +17,5 @@ export function ensemblMiddleware() {
         .catch((error) => {
             next({...error, type: ENSEMBL_ERROR});
         });
-    }
+    };
 }

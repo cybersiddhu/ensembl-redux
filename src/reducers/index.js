@@ -13,21 +13,21 @@ export function ensemblReducer(state = initialState, action) {
                 ...state,
                 id: action.id,
                 loading: true
-        }
+        };
         case 'ENSEMBL_SUCCESS':
             return {
                 ...state,
                 id: action.id,
                 result: action.result,
                 loading: false
-        }
+        };
         case 'ENSEMBL_ERROR':
             return {
                 ...state,
                 id: action.id,
                 error: action.error,
                 loading: false
-        }
+        };
         default:
             return state;
     }
