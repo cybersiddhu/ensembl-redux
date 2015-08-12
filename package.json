@@ -34,7 +34,7 @@
     "redux": "^1.0.0-rc",
     "react-redux": "0.5.x",
     "redux-thunk": "0.1.x",
-    "react-router": "1.0.0-beta1",
+    "react-router": "^1.0.0-beta3",
     "radium": "~0.13.2",
     "webpack": "~1.9.7",
     "yargs": "^3.16.1",
