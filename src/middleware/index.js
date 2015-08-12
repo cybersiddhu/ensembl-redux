@@ -12,10 +12,10 @@ export function ensemblMiddleware() {
         next({...rest, type: ENSEMBL_REQUEST});
         promise
         .then((result) => {
-            next({...result, type: ENSEMBL_SUCCESS});
+            next({response: response, id: action.id, type: ENSEMBL_SUCCESS });
         })
         .catch((error) => {
-            next({...error, type: ENSEMBL_ERROR});
+            next({error: error, id: action.id, type: ENSEMBL_ERROR});
         });
     };
 }
