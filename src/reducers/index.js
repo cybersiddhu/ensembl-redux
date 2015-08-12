@@ -2,7 +2,7 @@
 const initialState = {
     id: null,
     loading: false,
-    result: null,
+    response: null,
     error: null
 };
 
@@ -18,7 +18,7 @@ export function ensemblReducer(state = initialState, action) {
             return {
                 ...state,
                 id: action.id,
-                result: action.result,
+                response: action.response,
                 loading: false
         };
         case 'ENSEMBL_ERROR':
