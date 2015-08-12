@@ -8,7 +8,7 @@ const config = makeConfig({
   target : 'web',
   entry  : {
     app : [
-      projectConfig.inSrc('entry-points/client')
+      projectConfig.inSrc('index')
     ],
     vendor : projectConfig.VENDOR_DEPENDENCIES
   },
@@ -28,6 +28,7 @@ config.plugins.push(
   }),
   new HtmlWebpackPlugin({
     template : projectConfig.inSrc('index.html'),
+    inject: true,
     hash     : true
   }),
   new webpack.optimize.CommonsChunkPlugin('vendor', '[name].[hash].js')
@@ -36,17 +37,17 @@ config.plugins.push(
 // ------------------------------------
 // Client-Specific Loaders
 // ------------------------------------
-config.module.loaders.push(
-  {
-    test : /\.scss$/,
-    loaders : [
-      'style-loader',
-      'css-loader',
-      'autoprefixer?browsers=last 2 version',
-      `sass-loader?includePaths[]=${projectConfig.inSrc('styles')}`
-    ]
-  }
-);
+//config.module.loaders.push(
+  //{
+    //test : /\.scss$/,
+    //loaders : [
+      //'style-loader',
+      //'css-loader',
+      //'autoprefixer?browsers=last 2 version',
+      //`sass-loader?includePaths[]=${projectConfig.inSrc('styles')}`
+    //]
+  //}
+//);
 
 module.exports = function makeClientConfig (type) {
   return require('./_' + (type || projectConfig.NODE_ENV))(config);
