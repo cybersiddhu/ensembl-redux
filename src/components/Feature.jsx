@@ -1,16 +1,33 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {getOverlap} from '../actions';
+import {bindActionCreators} from 'redux';
 
-export default class Feature extends Component {
+
+// Which part of the Redux global state does our component want to receive as props
+function mapStateToProps(reducers) {
+    const state = reducers.ensemblReducer;
+    return {
+        id: state.id,
+        loading: state.loading,
+        response: state.response,
+        error: state.error
+    };
+}
+
+// Which action creators does it want to receive by props
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators({getOverlap}, dispatch)
+    };
+}
+
+export class Feature extends Component {
     displayName = 'display ensembl feature'
-    static contextTypes = {
-        router: React.PropTypes.func.isRequired
-    }
     componentDidMount() {
-        const {loading} = this.props;
-        const {actions} = this.props.actions;
-        const {id} = this.props.params;
+        const {loading, actions, params} = this.props;
         if (loading) {
-            actions.getOverlap(id);
+            actions.getOverlap(params.id);
         }
     }
     render() {
@@ -26,7 +43,7 @@ export default class Feature extends Component {
             display = (
                 <div>
                     <h2> Error !!!!! </h2>
-                    <h3> {error.data.error}</h3>
+                    <h3> {error}</h3>
                 </div>
             );
         } else {
@@ -42,3 +59,4 @@ export default class Feature extends Component {
     }
 }
 
+export default connect(mapStateToProps, mapDispatchToProps)(Feature);
