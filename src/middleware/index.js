@@ -1,7 +1,9 @@
+import agent from 'superagent';
+
 export function ensemblMiddleware() {
     return (next) => (action) => {
-        const {promise, types, ...rest} = action;
-        if (!promise) {
+        const {endpoint, types, ...rest} = action;
+        if (!endpoint) {
             return next(action);
         }
         const {
@@ -10,12 +12,23 @@ export function ensemblMiddleware() {
             ENSEMBL_ERROR
         } = types;
         next({...rest, type: ENSEMBL_REQUEST});
-        promise
-        .then((result) => {
-            next({response: response, id: action.id, type: ENSEMBL_SUCCESS });
-        })
-        .catch((error) => {
-            next({error: error, id: action.id, type: ENSEMBL_ERROR});
-        });
+        agent
+            .get(endpoint)
+            .set('Content-type', 'application/json')
+            .end((err, res) => {
+                if (err) {
+                    next({
+                        error: err.response.body,
+                        id: action.id,
+                        type: ENSEMBL_ERROR
+                    });
+                } else {
+                    next({
+                        response: res.body,
+                        id: action.id,
+                        type: ENSEMBL_SUCCESS
+                    });
+                }
+            });
     };
 }
