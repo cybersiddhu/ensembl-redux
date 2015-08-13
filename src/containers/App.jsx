@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import * as actionCreators from '../actions';
-import {bindActionCreators} from 'redux';
 
-class App extends Component {
+export default class App extends Component {
     displayName = 'default app'
     render() {
         const {children} = this.props;
@@ -17,21 +14,3 @@ class App extends Component {
     }
 }
 
-// Which part of the Redux global state does our component want to receive as props
-function mapStateToProps(state) {
-    return {
-        id: state.id,
-        loading: state.loading,
-        response: state.response,
-        error: state.error
-    };
-}
-
-// Which action creators does it want to receive by props
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(actionCreators, dispatch)
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
