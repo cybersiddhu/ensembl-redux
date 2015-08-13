@@ -1,6 +1,6 @@
 import {applyMiddleware, compose, createStore, combineReducers} from 'redux';
 import {devTools} from 'redux-devtools';
-import * as reducers from 'reducers';
+import * as reducers from 'reducers/ensembl';
 import {ensemblMiddleware} from '../middleware';
 
 let buildStore;
