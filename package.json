@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist",
-    "compile": "webpack && npm run compile:cleanup",
+    "compile": "webpack --progress",
     "compile:cleanup": "rm dist/client/index.html",
     "dev": "node --harmony ./config/webpack-dev-server",
-    "dev:debug": "npm run dev -- --debug",
-    "dev:quiet": "npm run dev -- --quiet",
     "test": "npm run test:unit",
     "test:unit": "./node_modules/karma/bin/karma start",
     "deploy": "npm run test && npm run compile",
