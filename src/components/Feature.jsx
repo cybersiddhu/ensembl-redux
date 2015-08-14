@@ -22,7 +22,7 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export class Feature extends Component {
+class Feature extends Component {
     displayName = 'display ensembl feature'
     componentDidMount() {
         const {loading, actions, params} = this.props;
