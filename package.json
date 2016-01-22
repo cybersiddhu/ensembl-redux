@@ -29,10 +29,10 @@
     "immutable": "^3.7.4",
     "object-assign": "^3.0.0",
     "react": "~0.13.3",
-    "redux": "~1.0.0",
-    "react-redux": "0.5.x",
+    "redux": "~3.0.0",
+    "react-redux": "2.x.x",
     "redux-thunk": "0.1.x",
-    "react-router": "^1.0.0-beta3",
+    "react-router": "^1.0.0-rc1",
     "radium": "~0.13.2",
     "webpack": "~1.9.7",
     "yargs": "^3.16.1",
@@ -52,7 +52,7 @@
     "karma-sourcemap-loader": "~0.3.5",
     "phantomjs-polyfill": "0.0.1",
     "react-hot-loader": "~1.2.7",
-    "redux-devtools": "~0.1.2",
+    "redux-devtools": "~2.1.2",
     "webpack-dev-server": "^1.8.2"
   }
 }
